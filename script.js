@@ -15,6 +15,10 @@ const japaneseRestaurant = {
       open: 10,
       close: 23,
     },
+    sat: {
+      open: 0,
+      close: 24,
+    },
     sun: {
       open: 12,
       close: 23,
@@ -74,6 +78,8 @@ console.log(menu, Hours, mainMenu);
 
 //// Default values
 
+//Spread
+
 const arr = [1, 4, 7];
 const newArrSpread = [2, 0, ...arr];
 console.log(newArrSpread);
@@ -116,3 +122,29 @@ const japaneseRestaurantCopy = { ...japaneseRestaurant };
 japaneseRestaurantCopy.restName = 'Sushi Suzuki';
 console.log(japaneseRestaurant.restName);
 console.log(japaneseRestaurantCopy.restName);
+
+//Rest
+
+const [seawed, , adamami, ...otherFood] = [
+  ...japaneseRestaurant.appetizers,
+  ...japaneseRestaurant.mainMenu,
+];
+console.log(seawed, adamami, otherFood);
+
+const { fri, sat, ...weekDays } = japaneseRestaurant.workingHours;
+console.log(fri, sat, weekDays);
+
+const sum = function (...nums) {
+  console.log(nums);
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+  console.log(sum);
+};
+
+sum(2, 5);
+sum(1, 4, 7, 3);
+
+const numbers = [3, 10, 11];
+sum(...numbers);
