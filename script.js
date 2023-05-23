@@ -33,6 +33,9 @@ const japaneseRestaurant = {
       `Ваш заказ приедет по адрессу ${adress} в ${deliveryTime} ${this.mainMenu[mainMenuIndex]}, ${this.appetizers[appetizersIndex]}}`
     );
   },
+  orderSushi: function (ing1, ing2, ing3) {
+    console.log(`Вы заказали суши с ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 japaneseRestaurant.foodDelivery({
@@ -70,3 +73,46 @@ console.log(menu, Hours, mainMenu);
 //console.log(x1, x3, x4);
 
 //// Default values
+
+const arr = [1, 4, 7];
+const newArrSpread = [2, 0, ...arr];
+console.log(newArrSpread);
+console.log(...newArrSpread);
+const newMenu = [...japaneseRestaurant.mainMenu, 'Filad'];
+console.log(newMenu);
+
+// Arrays copy
+
+const categoriesCopy = [...japaneseRestaurant.categories];
+console.log(categoriesCopy);
+
+// Merge arrays
+
+const menuMerge = [
+  ...japaneseRestaurant.appetizers,
+  ...japaneseRestaurant.mainMenu,
+];
+console.log(menuMerge);
+
+//const ingridients = [
+//  prompt('Enter ingridient1'),
+//  prompt('Enter ingridient2'),
+//  prompt('Enter ingridient3'),
+//];
+
+//japaneseRestaurant.orderSushi(...ingridients);
+
+// Objects
+
+const newJapanseRestaurant = {
+  foundationDate: 2023,
+  ...japaneseRestaurant,
+  owner: 'Suzuki',
+};
+
+console.log(newJapanseRestaurant);
+
+const japaneseRestaurantCopy = { ...japaneseRestaurant };
+japaneseRestaurantCopy.restName = 'Sushi Suzuki';
+console.log(japaneseRestaurant.restName);
+console.log(japaneseRestaurantCopy.restName);
