@@ -148,3 +148,91 @@ sum(1, 4, 7, 3);
 
 const numbers = [3, 10, 11];
 sum(...numbers);
+
+const game = {
+  team1: 'REAL MADRID',
+  team2: 'BARCELONA',
+  players: [
+    [
+      'Courtois',
+      'Vazquez',
+      'Militao',
+      'Nacho',
+      'Mendy',
+      'Casemiro',
+      'Valverde',
+      'Modrich',
+      'Kroos',
+      'Vinicius',
+      'Benzema',
+    ],
+    [
+      'Stegen',
+      'Mingueza',
+      'Araujo',
+      'Lenglet',
+      'Dest',
+      'Busquets',
+      'Jong',
+      'Alba',
+      'Messi',
+      'Pedri',
+      'Dembele',
+    ],
+  ],
+  score: '2:1',
+  scored: ['Kroos', 'Benzema', 'Mingueza'],
+  date: 'Apr 10th, 2021',
+  odds: {
+    team1: 1.48,
+    draw: 2.53,
+    team2: 4.25,
+  },
+};
+
+const [players1, players2] = game.players;
+console.log(players1);
+
+console.log(players2);
+
+const [goalkeeper, ...fieldPlayers] = players1;
+
+console.log(goalkeeper);
+
+console.log(fieldPlayers);
+
+const allPlayers = [...players1, ...players2];
+
+console.log(allPlayers);
+
+const players1Total = [
+  ...players1,
+  'Marcelo',
+  'Isco',
+  'Asensio',
+  'Diaz',
+  'Odriozola',
+];
+console.log(players1Total);
+
+const {
+  odds: { team1, team2, draw },
+} = game;
+console.log(team1);
+console.log(team2);
+console.log(draw);
+
+const printGoals = function (...gamePlayers) {
+  let scores = gamePlayers.length;
+  console.log(scores);
+  for (let i = 0; i < gamePlayers.length; i++) {
+    console.log(gamePlayers[i]);
+  }
+};
+
+printGoals('Kroos', 'Benzema', 'Mingueza');
+
+// 7
+
+team1 < team2 && console.log(game.team2);
+team1 > team2 && console.log(game.team1);
