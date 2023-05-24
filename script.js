@@ -236,3 +236,23 @@ printGoals('Kroos', 'Benzema', 'Mingueza');
 
 team1 < team2 && console.log(game.team2);
 team1 > team2 && console.log(game.team1);
+
+const menuAll = [
+  ...japaneseRestaurant.appetizers,
+  ...japaneseRestaurant.mainMenu,
+];
+console.log(menuAll);
+
+// for of in Arrays
+
+for (const x of menuAll) {
+  console.log(x);
+}
+
+for (const x of menuAll.entries()) {
+  console.log(`${x[0] + 1}. ${x[1]}`);
+}
+
+for (const [index, food] of menuAll.entries()) {
+  console.log(`${index + 1}. ${food}`);
+}
