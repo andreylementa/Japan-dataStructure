@@ -181,7 +181,7 @@ const game = {
     ],
   ],
   score: '2:1',
-  scored: ['Kroos', 'Benzema', 'Mingueza'],
+  scored: ['Kroos', 'Benzema', 'Mingueza', 'Benzema'],
   date: 'Apr 10th, 2021',
   odds: {
     team1: 1.48,
@@ -284,3 +284,35 @@ const posts = [
 
 console.log(posts[0]?.name ?? 'not exist');
 console.log(posts[2]?.name ?? 'not exist');
+
+// TASK
+// 1
+
+for (const [scores, player] of game.scored.entries()) {
+  console.log(scores + 1, player);
+}
+// 2
+
+let sumOdds = 0;
+
+const oddsValue = Object.values(game.odds);
+for (let x of oddsValue) {
+  sumOdds += x;
+}
+console.log(sumOdds / Object.values(game.odds).length);
+// 3
+
+for (const [teamName, odd] of Object.entries(game.odds)) {
+  const mutableText =
+    teamName === 'draw' ? 'draw' : `${game[teamName]} victory`;
+  console.log(`Rate for ${mutableText} : ${odd}`);
+}
+
+// 4
+
+const goalScores = {};
+
+for (const player of game.scored) {
+  goalScores[player] ? goalScores[player]++ : (goalScores[player] = 1);
+}
+console.log(goalScores);
