@@ -337,3 +337,37 @@ const ingirientsArray = ['sushi', 'ramen', 'sushi', 'ramen', 'adamami', 'luk'];
 console.log(ingirientsArray);
 const ingridientsRemoveDublicates = new Set(ingirientsArray);
 console.log(ingridientsRemoveDublicates);
+
+// Map
+
+const restaurant = new Map();
+restaurant.set('name', 'Bench');
+restaurant.set(1, 'London, England');
+restaurant.set(2, 'Paris, France');
+restaurant.set(3, 'Kiev, Ukraine');
+console.log(restaurant);
+
+restaurant
+  .set('categories', ['Japanese', 'Sushi', 'Vegetarian', 'Organic'])
+  .set('open', 10)
+  .set('close', 23)
+  .set(true, 'Bench is open')
+  .set(false, 'Bench is closed');
+console.log(restaurant);
+
+const currentTime = 24;
+console.log(
+  restaurant.get(
+    currentTime > restaurant.get('open') &&
+      currentTime < restaurant.get('close')
+  )
+);
+
+console.log(restaurant.has('opens'));
+restaurant.delete(1);
+console.log(restaurant);
+console.log(restaurant.size);
+const arrForMap = [1, 2, 3];
+restaurant.set(arrForMap, 'hello');
+console.log(restaurant);
+console.log(restaurant.get(arrForMap));
