@@ -316,3 +316,24 @@ for (const player of game.scored) {
   goalScores[player] ? goalScores[player]++ : (goalScores[player] = 1);
 }
 console.log(goalScores);
+
+// Set
+
+const ingridients = new Set(['sushi', 'ramen', 'sushi', 'ramen', 'adamami']);
+
+console.log(ingridients);
+console.log(ingridients.size);
+ingridients.add('pizza');
+console.log(ingridients);
+console.log(ingridients.size);
+console.log(ingridients.has('pizza'));
+for (const item of ingridients) {
+  console.log(item);
+}
+
+// Set remove dublicates
+
+const ingirientsArray = ['sushi', 'ramen', 'sushi', 'ramen', 'adamami', 'luk'];
+console.log(ingirientsArray);
+const ingridientsRemoveDublicates = new Set(ingirientsArray);
+console.log(ingridientsRemoveDublicates);
