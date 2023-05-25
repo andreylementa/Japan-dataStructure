@@ -256,3 +256,31 @@ for (const x of menuAll.entries()) {
 for (const [index, food] of menuAll.entries()) {
   console.log(`${index + 1}. ${food}`);
 }
+
+// Using optional chaining
+console.log(japaneseRestaurant.workingHours.fri?.open);
+
+const daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const x of daysOfWeek) {
+  const open = japaneseRestaurant.workingHours[x]?.open ?? 'never';
+  console.log(`On ${x} restaurant opens at ${open}`);
+  //console.log(
+  //  `On ${x} restaurant opens at ${japaneseRestaurant.workingHours[x]?.open}`
+  //);
+}
+
+// Methods
+
+console.log(japaneseRestaurant.orderFood?.(1, 2) ?? 'NOT');
+console.log(japaneseRestaurant.order1Food?.(1, 2) ?? 'NOT');
+
+// Arrays
+
+const posts = [
+  { name: 'Js is cool', username: 'Dick' },
+  { name: 'Js is cool', username: 'Dick' },
+];
+
+console.log(posts[0]?.name ?? 'not exist');
+console.log(posts[2]?.name ?? 'not exist');
