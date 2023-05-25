@@ -1,4 +1,24 @@
 'use strict';
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const workingHours = {
+  [weekdays[2]]: {
+    open: 10,
+    close: 23,
+  },
+  [weekdays[4]]: {
+    open: 10,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+  [weekdays[6]]: {
+    open: 12,
+    close: 23,
+  },
+};
 
 const japaneseRestaurant = {
   restName: 'Banzai',
@@ -371,3 +391,40 @@ const arrForMap = [1, 2, 3];
 restaurant.set(arrForMap, 'hello');
 console.log(restaurant);
 console.log(restaurant.get(arrForMap));
+
+const question = new Map([
+  ['question', 'what is the most popular programming language for frontend?'],
+  [1, 'JavaScript'],
+  [2, 'Python'],
+  [3, 'Java'],
+  ['correctAnswer', 1],
+  [true, 'correct answer :D'],
+  [false, 'This is incorrect'],
+]);
+console.log(question);
+
+// Converting objects to map
+
+console.log(Object.entries(workingHours));
+const workingHoursMap = new Map(Object.entries(workingHours));
+console.log(workingHoursMap);
+
+// Quiz app
+
+console.log(question.get('question'));
+
+for (const [key, item] of question) {
+  if (typeof key === 'number') {
+    console.log(key, item);
+  }
+}
+
+//const userAnswer = Number(prompt('Choose the option nubmer'));
+//console.log(userAnswer);
+
+//console.log(question.get(question.get('correctAnswer') === userAnswer));
+
+document.querySelector('h2').addEventListener('click', function () {
+  document.querySelector('h2').style.color = 'red';
+  console.log('asdasd');
+});
