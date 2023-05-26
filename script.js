@@ -465,3 +465,13 @@ for (const [timeEvents, event] of events) {
     ? console.log(`[FIRSTHALF] ${timeEvents}: ${event}`)
     : console.log(`[SECONDHALF] ${timeEvents}: ${event}`);
 }
+const ticketPriceEU = '178E';
+console.log(ticketPriceEU.slice(0, -1));
+const ticketPriceUS = ticketPriceEU.replace(
+  '178',
+  `${ticketPriceEU.slice(0, -1) * 2}`
+);
+console.log(ticketPriceUS);
+
+const repeat = '111';
+console.log(repeat.replaceAll('1', '2'));
