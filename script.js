@@ -578,4 +578,48 @@ const checkLuggage = function (luggage) {
   }
 };
 
-const ad = 'e';
+// // split() and join()
+console.log('My+name+is+YouRa.'.split('+'));
+console.log('YouRa Allakhverdov'.split(' '));
+
+const [firstName, lastName] = 'YouRa Allakhverdov'.split(' ');
+console.log(firstName, lastName);
+
+console.log(['Mr.', firstName, lastName.toUpperCase()].join(' '));
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesCapitalized = [];
+  for (const n of names) {
+    // namesCapitalized.push(n[0].toUpperCase() + n.slice(1));
+    namesCapitalized.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  const capitalizedFullName = namesCapitalized.join(' ');
+  return capitalizedFullName;
+};
+
+console.log(capitalizeName('youra allakhverdov'));
+console.log(capitalizeName('jack white tiger jr.'));
+
+// Padding
+const message = 'Hi there!';
+console.log(message.padStart(27, '-').padEnd(37, '-'));
+
+const maskCreditCard = function (cardNumber) {
+  const strCardNumber = cardNumber + '';
+  const last4 = strCardNumber.slice(-4);
+  return last4.padStart(strCardNumber.length, '*');
+};
+
+console.log(maskCreditCard(1414312413591239515));
+console.log(maskCreditCard('1251543661261363616146126'));
+
+// repeat()
+const greeting = 'Hi!';
+console.log(greeting.repeat(50));
+
+const howMuchYouLoveSomebody = function (loveNumber) {
+  console.log(`I love you ${'❤️ '.repeat(loveNumber)}`);
+};
+
+howMuchYouLoveSomebody(100);
