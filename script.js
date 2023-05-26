@@ -623,3 +623,38 @@ const howMuchYouLoveSomebody = function (loveNumber) {
 };
 
 howMuchYouLoveSomebody(100);
+
+// TASK 4
+
+//Test data (for inserting into the textarea including spaces):
+
+//underscore_case
+//  first_name
+//next_Variable
+//   Calculate_AGE
+//arrived_flight
+
+//This output should appear (5 separate console.log outputs):
+//underscoreCase
+//firstName
+//nextVariable
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const textLine = document.querySelector('textarea').value.split('\n');
+  console.log(textLine);
+  for (const i of textLine) {
+    const [word1, word2] = i.split('_');
+    //console.log(word1, word2);
+    const wordTrim1 = word1.trim();
+    const wordTrim2 = word2.trim();
+    //console.log(wordTrim1, wordTrim2);
+    const valueResult =
+      wordTrim1.toLowerCase() +
+      wordTrim2[0].toUpperCase() +
+      wordTrim2.slice(1).toLowerCase();
+    console.log(valueResult);
+  }
+});
