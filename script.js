@@ -465,13 +465,117 @@ for (const [timeEvents, event] of events) {
     ? console.log(`[FIRSTHALF] ${timeEvents}: ${event}`)
     : console.log(`[SECONDHALF] ${timeEvents}: ${event}`);
 }
-const ticketPriceEU = '178E';
-console.log(ticketPriceEU.slice(0, -1));
-const ticketPriceUS = ticketPriceEU.replace(
-  '178',
-  `${ticketPriceEU.slice(0, -1) * 2}`
-);
+
+// Working with strings
+
+const airline = 'SkyUp Airline';
+const airplane = 'Boeing 737';
+
+console.log(airplane[0]);
+console.log(airplane[1]);
+console.log(airplane[2]);
+console.log('SkyUp'[0]);
+
+console.log(airline.length);
+console.log('Boeing 737'.length);
+
+console.log(airplane.indexOf(' '));
+console.log(airplane.indexOf('7'));
+console.log(airplane.lastIndexOf('7'));
+console.log(airline.indexOf('up'));
+
+console.log(airplane.slice(7));
+console.log(airplane);
+console.log(airplane.slice(0, 6));
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airplane.slice(airplane.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(2, -2));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seat
+  const seatLetter = seat.slice(-1);
+  if (seatLetter === 'B' || seatLetter === 'E') {
+    console.log('This is a middle seat.');
+  } else {
+    console.log('This is not a middle seat.');
+  }
+};
+
+checkMiddleSeat('21A');
+checkMiddleSeat('7B');
+checkMiddleSeat('14E');
+
+const x = new String('Hello');
+console.log(typeof x);
+console.log(typeof x.slice(2));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix the passenger name
+const passengerName = 'liNDa'; // Linda
+const passengerNameLower = passengerName.toLowerCase();
+console.log(passengerNameLower);
+const passengerNameFixed =
+  passengerNameLower[0].toUpperCase() + passengerNameLower.slice(1);
+console.log(passengerNameFixed);
+
+// Email validation
+const email = 'someemail@gmail.com';
+const loginEmail = '  SomeEmail@Gmail.com \n';
+
+const emailLower = loginEmail.toLowerCase();
+const emailTrimmed = emailLower.trim();
+console.log(emailTrimmed);
+
+const emailNormalized = loginEmail.toLowerCase().trim();
+console.log(emailNormalized);
+console.log(email === emailNormalized);
+
+// Replacing
+const ticketPriceEU = '197,23€';
+const ticketPriceUS = ticketPriceEU.replace(',', '.').replace('€', '$');
 console.log(ticketPriceUS);
 
-const repeat = '111';
-console.log(repeat.replaceAll('1', '2'));
+const announcement =
+  'All passengers of flight EG234 come to boarding door 18. Boarding door 18!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Methods return boolean
+console.log(airplane);
+console.log(airplane.includes('737'));
+console.log(airplane.includes('738'));
+
+console.log(airplane.startsWith('Boe'));
+console.log(airplane.startsWith('Bt'));
+console.log(airplane.startsWith('737'));
+
+console.log(airplane.endsWith('737'));
+console.log(airplane.endsWith('Boeing'));
+
+const airplane1 = 'Airbus';
+
+if (airplane.startsWith('Boeing')) {
+  console.log('You gonna fly on Boeng!');
+}
+
+if (airplane1.startsWith('Boeing')) {
+  console.log('You gonna fly on Boeng!');
+}
+
+// Example
+const checkLuggage = function (luggage) {
+  const luggageLower = luggage.toLowerCase();
+  if (luggageLower.includes('knife') || luggageLower.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('Welcome to the board!');
+  }
+};
+
+const ad = 'e';
